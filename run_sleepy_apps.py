@@ -1,4 +1,5 @@
 import asyncio
+import time
 
 from logzero import logger
 
@@ -9,30 +10,38 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 urls = [
     {
-        "url": "https://mpkrass7-pokemon-battle-predictor-battle-simulator-publi-1q0brh.streamlitapp.com/",
+        "url": "https://pokepredict.streamlit.app/",
         "name": "Pokemon Battle Predictor",
     },
     {
-        "url": "https://mpkrass7-visual-ai-drag-and--visual-ai-drag-and-drop-app-o3kttv.streamlitapp.com/",
+        "url": "https://drplantclassifier.streamlit.app/",
         "name": "Plant Disease Classifier",
     },
     {
-        "url": "https://mpkrass7-aml-app-aml-app-dbokcc.streamlitapp.com/",
+        "url": "https://amlbuddy.streamlit.app/",
         "name": "AML App",
     },
     {
-        "url": "https://mpkrass7-redesigned-octo-disco-streamlit-bigger-appapp-bd2mgm.streamlitapp.com/",
+        "url": "https://rolling-stonalytics.streamlit.app/",
         "name": "Rolling Stone Top 500",
     },
     {
-        "url": "https://mpkrass7-solid-octo-robot-migration-app-nabfxv.streamlitapp.com/",
+        "url": "https://statesmigrate.streamlit.app/",
         "name": "Migration App",
     },
     {
-        "url": "https://liam-pasinato-utah-housing-market-1--utah-housing-0z8s0r.streamlitapp.com/",
+        "url": "https://utah-house-pricing.streamlit.app/",
         "name": "Utah Housing Market",
     },
-    {"url": "https://thawing-peak-12115.herokuapp.com/", "name": "Shiny Pokemon DB"},
+    {
+        "url": "https://inference-test.streamlit.app/",
+        "name": "Inference Test",
+    },
+    {
+        "url": "https://complybuddy.streamlit.app/",
+        "name": "Comply Buddy",
+    },
+    {"url": "https://marshallp.shinyapps.io/ShinyPokemonDB/", "name": "Shiny Pokemon"},
 ]
 
 
@@ -45,17 +54,26 @@ async def open_app(url, service):
 
     driver = webdriver.Chrome(service=Service(service), options=chrome_options)
 
+    # Go to url
     driver.get(url["url"])
     logger.info(f"{url['name']} is sleeping at {url['url']}...")
-    await asyncio.sleep(30)
+
+    # Wait for 2 minutes and let function execute for other apps in the mean time
+    await asyncio.sleep(120)
+
+    # Close the browser
     driver.close()
     logger.info(f"Closed {url['name']} at {url['url']}")
     return 200
 
 
 async def main(urls):
+    """Open webpage on list of urls concurrently"""
     service = ChromeDriverManager().install()
+    start = time.time()
+    # Run everything concurrently
     await asyncio.gather(*(open_app(url, service) for url in urls))
+    logger.info(f"Finished in {time.time() - start} seconds")
 
 
 if __name__ == "__main__":
