@@ -1,0 +1,24 @@
+name: App Refresher
+on:
+  schedule:
+    - cron: "01 00 * * *"
+  workflow_dispatch:
+jobs:
+  get_walkups:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run the refresh
+        run: |
+          python run_sleepy_apps.py
