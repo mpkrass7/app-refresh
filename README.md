@@ -1,5 +1,5 @@
 # App Refresh
-This repo exists for the single purpose of keeping some of my Streamlit apps (and a shiny app) running
+This repo exists for the single purpose of keeping some of my Streamlit apps (and a shiny app) running.
 
 ## Packages and other nifty tools used
 - Asyncio
