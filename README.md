@@ -6,4 +6,4 @@ This repo exists for the single purpose of keeping some of my Streamlit apps (an
 - Selenium
 - Github actions
 
-That's about it. This one is not meant to be complicated. Checkout out the [blogpost](https://www.marshallpk.com/post/sleepy-apps/) on my website for more detail!
+That's it! This one is not meant to be complicated. Checkout out the [blogpost](https://www.marshallpk.com/post/sleepy-apps/) on my website for more detail!
