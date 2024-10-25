@@ -11,35 +11,39 @@ from webdriver_manager.chrome import ChromeDriverManager
 urls = [
     {
         "url": "https://pokepredict.streamlit.app/",
-        "name": "Pokemon Battle Predictor",
+        "name": "Pokemon Battle Predictor"
     },
     {
         "url": "https://drplantclassifier.streamlit.app/",
-        "name": "Plant Disease Classifier",
+        "name": "Plant Disease Classifier"
     },
     {
         "url": "https://amlbuddy.streamlit.app/",
-        "name": "AML App",
+        "name": "AML App"
     },
     {
         "url": "https://rolling-stonalytics.streamlit.app/",
-        "name": "Rolling Stone Top 500",
+        "name": "Rolling Stone Top 500"
     },
     {
         "url": "https://statesmigrate.streamlit.app/",
-        "name": "Migration App",
+        "name": "Migration App"
     },
     {
         "url": "https://utah-house-pricing.streamlit.app/",
-        "name": "Utah Housing Market",
+        "name": "Utah Housing Market"
     },
     {
+        "url": "https://detroit911.streamlit.app/",
+        "name": "Detroit 911 Calls"
+    }
+    {
         "url": "https://inference-test.streamlit.app/",
-        "name": "Inference Test",
+        "name": "Inference Test"
     },
     {
         "url": "https://complybuddy.streamlit.app/",
-        "name": "Comply Buddy",
+        "name": "Comply Buddy"
     },
     {"url": "https://marshallp.shinyapps.io/ShinyPokemonDB/", "name": "Shiny Pokemon"},
 ]
