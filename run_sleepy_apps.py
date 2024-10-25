@@ -36,7 +36,7 @@ urls = [
     {
         "url": "https://detroit911.streamlit.app/",
         "name": "Detroit 911 Calls"
-    }
+    },
     {
         "url": "https://inference-test.streamlit.app/",
         "name": "Inference Test"
