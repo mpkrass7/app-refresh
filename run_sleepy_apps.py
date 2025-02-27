@@ -10,7 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 urls = [
     {
-        "url": "https://pokepredict.streamlit.app/",
+        "url": "https://poke-predict.streamlit.app/",
         "name": "Pokemon Battle Predictor"
     },
     {
